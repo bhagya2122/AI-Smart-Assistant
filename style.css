@@ -1,0 +1,256 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f1f5f9;
+    color: #1e293b;
+    min-height: 100vh;
+}
+
+
+/* HEADER */
+
+.header {
+    background: linear-gradient(135deg, #172554, #2563eb);
+    color: white;
+    text-align: center;
+    padding: 35px 20px;
+}
+
+.header h1 {
+    font-size: 30px;
+    margin-bottom: 12px;
+}
+
+.header p {
+    font-size: 16px;
+    color: #dbeafe;
+}
+
+
+/* MAIN CONTAINER */
+
+.container {
+    width: 92%;
+    max-width: 1050px;
+    margin: 30px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+
+/* CARDS */
+
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px rgba(15, 23, 42, 0.08);
+}
+
+.card h2 {
+    margin-bottom: 20px;
+    font-size: 22px;
+}
+
+
+/* CAMERA */
+
+.camera-container {
+    width: 100%;
+    background: #0f172a;
+    border-radius: 12px;
+    overflow: hidden;
+    min-height: 250px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#video {
+    width: 100%;
+    height: 320px;
+    object-fit: cover;
+    display: block;
+    background: #0f172a;
+}
+
+
+/* BUTTONS */
+
+.buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.btn {
+    flex: 1;
+    min-width: 110px;
+    border: none;
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: white;
+    font-size: 14px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.btn:hover {
+    opacity: 0.85;
+    transform: translateY(-1px);
+}
+
+.btn-start {
+    background: #16a34a;
+}
+
+.btn-detect {
+    background: #2563eb;
+}
+
+.btn-stop {
+    background: #dc2626;
+}
+
+
+/* RESULT */
+
+.result {
+    margin-top: 20px;
+    padding: 15px;
+    border-radius: 8px;
+    background: #eff6ff;
+    border-left: 4px solid #2563eb;
+    line-height: 1.6;
+    overflow-wrap: anywhere;
+}
+
+
+/* EMOTION GRAPH */
+
+.subtitle {
+    margin-top: -10px;
+    margin-bottom: 25px;
+    color: #64748b;
+    font-size: 14px;
+}
+
+.emotion-row {
+    display: grid;
+    grid-template-columns: 85px 1fr 55px;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 22px;
+    font-size: 14px;
+}
+
+.bar-background {
+    width: 100%;
+    height: 13px;
+    background: #e2e8f0;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.bar {
+    width: 0%;
+    height: 100%;
+    border-radius: 20px;
+    transition: width 0.5s ease;
+}
+
+.happy {
+    background: #16a34a;
+}
+
+.sad {
+    background: #2563eb;
+}
+
+.angry {
+    background: #dc2626;
+}
+
+.neutral {
+    background: #64748b;
+}
+
+.surprise {
+    background: #9333ea;
+}
+
+.fear {
+    background: #ea580c;
+}
+
+.disgust {
+    background: #0d9488;
+}
+
+
+/* SAFETY TIPS */
+
+.safety-card {
+    grid-column: 1 / -1;
+}
+
+.safety-card ul {
+    padding-left: 22px;
+    line-height: 2;
+}
+
+.safety-card li {
+    margin-bottom: 5px;
+}
+
+
+/* FOOTER */
+
+.footer {
+    text-align: center;
+    background: #172554;
+    color: white;
+    padding: 25px 15px;
+    line-height: 1.8;
+    font-size: 13px;
+}
+
+
+/* RESPONSIVE DESIGN */
+
+@media (max-width: 750px) {
+
+    .container {
+        grid-template-columns: 1fr;
+    }
+
+    .safety-card {
+        grid-column: auto;
+    }
+
+    .header h1 {
+        font-size: 23px;
+    }
+
+    .card {
+        padding: 18px;
+    }
+
+    #video {
+        height: 250px;
+    }
+
+    .emotion-row {
+        grid-template-columns: 75px 1fr 50px;
+        gap: 7px;
+        font-size: 12px;
+    }
+}

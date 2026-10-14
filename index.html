@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>AI Smart Safety & Emotion Assistant</title>
+
+    <link rel="stylesheet"
+          href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <header class="header">
+        <h1>AI Smart Safety & Emotion Assistant</h1>
+
+        <p>
+            Smart Emotion Detection and Personal Safety
+        </p>
+    </header>
+
+
+    <main class="container">
+
+        <!-- CAMERA SECTION -->
+        <section class="card">
+
+            <h2>📷 Camera Detection</h2>
+
+            <div class="camera-container">
+
+                <video id="video"
+                       autoplay
+                       playsinline
+                       muted>
+                </video>
+
+                <canvas id="canvas" hidden></canvas>
+
+            </div>
+
+            <div class="buttons">
+
+                <button id="start-camera-btn"
+                        class="btn btn-start"
+                        onclick="startCamera()">
+                    Start Camera
+                </button>
+
+                <button id="detect-emotion-btn"
+                        class="btn btn-detect"
+                        onclick="detectEmotion()">
+                    Detect Emotion
+                </button>
+
+                <button id="stop-camera-btn"
+                        class="btn btn-stop"
+                        onclick="stopCamera()">
+                    Stop Camera
+                </button>
+
+            </div>
+
+            <div id="emotion-result" class="result">
+                Click Start Camera to begin.
+            </div>
+
+        </section>
+
+
+        <!-- EMOTION GRAPH -->
+        <section class="card">
+
+            <h2>📊 Emotion Analysis</h2>
+
+            <p class="subtitle">
+                Emotion scores returned by the AI model
+            </p>
+
+            <div class="emotion-row">
+                <span>😊 Happy</span>
+
+                <div class="bar-background">
+                    <div id="happy-bar"
+                         class="bar happy">
+                    </div>
+                </div>
+
+                <span id="happy-value">0.0%</span>
+            </div>
+
+
+            <div class="emotion-row">
+                <span>😢 Sad</span>
+
+                <div class="bar-background">
+                    <div id="sad-bar"
+                         class="bar sad">
+                    </div>
+                </div>
+
+                <span id="sad-value">0.0%</span>
+            </div>
+
+
+            <div class="emotion-row">
+                <span>😠 Angry</span>
+
+                <div class="bar-background">
+                    <div id="angry-bar"
+                         class="bar angry">
+                    </div>
+                </div>
+
+                <span id="angry-value">0.0%</span>
+            </div>
+
+
+            <div class="emotion-row">
+                <span>😐 Neutral</span>
+
+                <div class="bar-background">
+                    <div id="neutral-bar"
+                         class="bar neutral">
+                    </div>
+                </div>
+
+                <span id="neutral-value">0.0%</span>
+            </div>
+
+
+            <div class="emotion-row">
+                <span>😲 Surprise</span>
+
+                <div class="bar-background">
+                    <div id="surprise-bar"
+                         class="bar surprise">
+                    </div>
+                </div>
+
+                <span id="surprise-value">0.0%</span>
+            </div>
+
+
+            <div class="emotion-row">
+                <span>😨 Fear</span>
+
+                <div class="bar-background">
+                    <div id="fear-bar"
+                         class="bar fear">
+                    </div>
+                </div>
+
+                <span id="fear-value">0.0%</span>
+            </div>
+
+
+            <div class="emotion-row">
+                <span>🤢 Disgust</span>
+
+                <div class="bar-background">
+                    <div id="disgust-bar"
+                         class="bar disgust">
+                    </div>
+                </div>
+
+                <span id="disgust-value">0.0%</span>
+            </div>
+
+        </section>
+
+
+        <!-- SAFETY TIPS -->
+        <section class="card safety-card">
+
+            <h2>🛡️ Personal Safety Tips</h2>
+
+            <ul>
+                <li>Stay aware of your surroundings.</li>
+
+                <li>Keep emergency contacts accessible.</li>
+
+                <li>Share your location with trusted people.</li>
+
+                <li>Avoid isolated areas whenever possible.</li>
+
+                <li>Contact emergency services if you are in danger.</li>
+            </ul>
+
+        </section>
+
+    </main>
+
+
+    <footer class="footer">
+        <p>
+            AI Smart Safety & Emotion Assistant
+        </p>
+
+        <p>
+            Emotion predictions are estimates, not reliable
+            measurements of a person's actual feelings.
+        </p>
+    </footer>
+
+
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+
+</body>
+
+</html>
